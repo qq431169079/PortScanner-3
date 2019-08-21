@@ -1,0 +1,33 @@
+app_name = "PortScanner"
+redis_url = "redis://root:password@redis-server:6379/0"
+worker_num = 100
+
+[ip_list_file]
+    enable = true
+    scan_list = "scan_ip.txt"
+    white_list = "white_ip.txt"
+
+[http_config]
+    http_token = "PortScanner"
+    http_port = 1973
+
+[mongodb_config]
+    mongodb_url = "mongodb://127.0.0.1:27017"
+    mongodb_dbname = "PortScanner"
+
+[log_config]
+    log_level = "error"
+    log_file = "server.log"
+
+[masscan_config]
+    auto_interface = true
+    port_range = "1-65535"
+    scan_rate = "3000"
+
+[email_config]
+    enable = false
+    username = "username@163.com"
+    password = "password"
+    smtp_host = "smtp.163.com"
+    smtp_port = "25"
+    to_list = ["username@163.com"]
