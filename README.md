@@ -1,6 +1,6 @@
 # PortScanner
 
-一款基于 golang 的分布式高并发端口扫描器，扫描逻辑实现参考自 [goSkylar](https://github.com/LakeVilladom/goSkylar) 
+一款基于 golang 的分布式高并发端口扫描器，
 
 ### 安装部署
 
@@ -82,9 +82,12 @@ nohup scanServer 1>nohup.out 2>stderr.out &
 nohup curl http://server-host:1973/api/download --user "PortScanner:PortScanner" -o scanAgent && chmod +x scanAgent && ./scanAgent -server server-host:1973 -token PortScanner  -loglevel info -logfile agent.log -worker 10 2> stderr.out 1> nohup.out &
 ```
 
+默认扫描调度只实现了读取扫描名单，过滤白名单的功能，需要更为复杂扫描逻辑的请自行修改代码添加。
 
 
 ### 参考资料
 
 ---
+
+[goSkylar](https://github.com/LakeVilladom/goSkylar) 
 

@@ -57,6 +57,7 @@ type (
 	}
 )
 
+// 解析 toml 相关配置
 func configParse() (*logrus.Entry, *config) {
 	conf := new(config)
 	_, err := toml.DecodeFile(configFile, conf)
@@ -72,6 +73,7 @@ func configParse() (*logrus.Entry, *config) {
 	return log, conf
 }
 
+// 默认 worker 配置
 func workerSetting() goworker.WorkerSettings {
 	return goworker.WorkerSettings{
 		Queues: []goworker.Queue{
